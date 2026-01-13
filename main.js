@@ -52,4 +52,16 @@ const loadPage = () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     loadPage();
+
+    gsap.fromTo('.bem',{ 
+        x: -200
+    },{
+        x: 0,
+        duration: 1.2,
+        ease: 'power3.out' 
+    });
+    gsap.fromTo('.vindo',
+        { x: 200 },
+        { x: 0, duration: 1.2, ease: 'power3.out' }
+    );
 });

@@ -102,10 +102,6 @@ h1, h2, h3, h4, h5, h6 {
   transition: transform 0.3s cubic-bezier(.4,2,.6,1);
 }
 
-.img-main:hover {
-  transform: scale(1.08);
-}
-
 .img-felipe {
   border-radius: 20px;
   box-shadow: 0 4px 24px 0 rgba(0,0,0,0.15);
@@ -138,17 +134,20 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-title);
   font-size: 7rem;
   font-weight: bold;
+  font-style: normal;
   line-height: 1;
-  width: 100%;
   white-space: nowrap;
-  overflow: hidden;
+  font-family: "Anton SC", sans-serif;
+}
+
+.bem, .vindo {
+  display: inline-block;
 }
 
 .subtitle-main {
   color: var(--color-subtitle);
   font-size: 3rem;
   line-height: 1.5;
-  margin: 5px;
   min-height: 4.5rem;
   position: fixed;
 }
