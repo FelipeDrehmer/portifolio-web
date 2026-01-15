@@ -51,8 +51,7 @@ const loadPage = () => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-    loadPage();
-
+    
     gsap.fromTo('.bem',{ 
         x: -200
     },{
@@ -64,4 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { x: 200 },
         { x: 0, duration: 1.2, ease: 'power3.out' }
     );
+
+    setTimeout(loadPage, 1000);
+
 });
