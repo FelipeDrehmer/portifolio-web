@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://unpkg.com/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,35 +16,38 @@
 </head>
 <body class="bg-main">
   
-  <main>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="#inicio" class="nav-link active">INICIO</a></li>
-          <li><a href="#projetos" class="nav-link">PROJETOS</a></li>
-          <li><a href="#sobre-mim" class="nav-link">QUEM SOU EU</a></li>
-        </ul>
-      </nav>
-    </header>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#inicio" class="nav-link active" data-scroll-to>INICIO</a></li>
+        <li><a href="#projetos" class="nav-link" data-scroll-to>PROJETOS</a></li>
+        <li><a href="#sobre-mim" class="nav-link" data-scroll-to>QUEM SOU EU</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section id="inicio">
+  <main data-scroll-container>
+    <section id="inicio" data-scroll-section>
       <div class="inicio-wrapper">
-        <div class="inicio-decoration-square"></div>
-        <div class="inicio-main-container">
+        <div class="inicio-decoration-square" data-scroll data-scroll-speed="2"></div>
+        <div class="inicio-main-container" data-scroll data-scroll-speed="1">
           <ul>
             <li class="inicio-text-main"><span class="line-number"><b>01</b></span><span class="grey-text">&lt;</span><b>Olá,</b> eu sou o Felipe<span class="grey-text">&gt;</span></li>
             <li class="inicio-text-main"><span class="line-number"><b>02</b></span><span class="grey-text">&lt;</span>Conheça <b class="blue-text">quem eu sou</b> e <b class="blue-text">meus</b></li>
             <li class="inicio-text-main"><span class="line-number"><b>03</b></span><b class="blue-text">projetos</b><span class="grey-text">&gt;</span> |</li>
           </ul>
         </div>
-        <div class="inicio-text-detail">
+        <div class="inicio-text-detail" data-scroll data-scroll-speed="0.5">
           <h1>Dev. Full Stack</h1>
         </div>
       </div>
+      <button class="inicio-scroll-arrow" id="btn-projetos">
+        <i class='bx bx-chevron-down'></i>
+      </button>
       <div class="inicio-blue-separator"></div>
     </section>  
 
-    <section id="projetos">
+    <section id="projetos" data-scroll-section>
       <h1 class="projetos-title"><span class="projetos-title-number"><b>01</b></span><span class="grey-text">&lt;</span>Meus Projetos<span class="grey-text">&gt;</span></h1>
       <div class="projetos-wrapper">
         <div class="projetos-cards-projs">
@@ -56,7 +60,7 @@
               <div class="projetos-card-text">Site desenvolvido via projeto acadêmico para divulgar a cultura Guarani por meio de informações sobre a aldeia, eventos culturais, galeria multimídia e recursos educativos como um dicionário básico da língua. O objetivo é aproximar escolas, alunos e visitantes da cultura indígena de forma acessível, interativa e informativa.</div>
             </div>
             <div class="projetos-card-footer">
-              <button class="projetos-card-button">Check it</button>
+              <a href="https://jurua.vercel.app/pages/home-page/index.html" target="_blank" class="projetos-card-button">Check it</a>
             </div>
           </div>
           <div class="projetos-card">
@@ -68,7 +72,7 @@
               <div class="projetos-card-text">Módulo de comunicação em tempo real integrado ao ERP, criado para permitir a troca de mensagens entre operadores durante a execução das rotinas do sistema. O objetivo é agilizar a comunicação interna, reduzir ruídos operacionais e centralizar as interações no próprio ambiente de trabalho, sem depender de ferramentas externas.</div>
             </div>
             <div class="projetos-card-footer">
-              <button class="projetos-card-button-info">i</button>
+              <button class="projetos-card-button-info" data-modal="modal-chat-erp">i</button>
             </div>
           </div>
         </div>
@@ -83,12 +87,40 @@
       </div>
     </section>
 
-    <section id="sobre-mim">
+    <section id="sobre-mim" data-scroll-section>
     </section>
   </main>
 
+  <div class="modal-overlay" id="modal-chat-erp">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <div class="modal-header">
+        <h2><span class="grey-text">&lt;</span>Chat ERP<span class="grey-text">&gt;</span></h2>
+        <span class="modal-tag">✦ Utils</span>
+      </div>
+      <div class="modal-body">
+        <p>Este projeto foi desenvolvido como um módulo interno para um sistema ERP, por isso não está disponível para acesso público.</p>
+        <h3>Tecnologias utilizadas:</h3>
+        <ul>
+          <li>Delphi 12 para desenvolvimento</li>
+          <li>Triggers para comunicação com o banco e disparo de eventos</li>
+          <li>Integração com banco de dados do ERP</li>
+          <li>Interface responsiva</li>
+        </ul>
+        <h3>Funcionalidades:</h3>
+        <ul>
+          <li>Chat em tempo real entre operadores</li>
+          <li>Notificações de novas mensagens</li>
+          <li>Histórico de conversas</li>
+          <li>Integração com módulos do ERP</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/TextPlugin.min.js"></script>
 
   <script src="https://unpkg.com/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
   
