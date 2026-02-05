@@ -1,3 +1,15 @@
+:root {
+  --color-bgPrimary: #ffffffff;
+  --color-bgCard1: #E6E6E6;
+  --color-bgCard2: #5D7AFF;
+  --color-text1: #ffffffff;
+  --color-text2: #000000;
+  --color-text3: #777777;
+  --color-text4: #5D7AFF;
+
+  --transition: all 0.3s ease;
+}
+
 *,
 *::before,
 *::after {
@@ -130,17 +142,6 @@ nav ul {
 
 .nav-link.active::after {
   width: 100%;
-}
-:root {
-  --color-bgPrimary: #ffffffff;
-  --color-bgCard1: #E6E6E6;
-  --color-bgCard2: #5D7AFF;
-  --color-text1: #ffffffff;
-  --color-text2: #000000;
-  --color-text3: #777777;
-  --color-text4: #5D7AFF;
-
-  --transition: all 0.3s ease;
 }
 
 .bg-main {
@@ -313,7 +314,6 @@ nav ul {
   display: flex;
   margin-top: 1rem;
   color: var(--color-text1);
-  font-size: 1rem;
   line-height: 1.5;
   font-size: 1.1rem;
   margin: 1rem;
