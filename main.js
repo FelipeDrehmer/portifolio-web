@@ -1,4 +1,10 @@
 const loadPage = () => {
+    const scroll = new LocomotiveScroll({
+        el: document.querySelector('main'),
+        smooth: true,
+        multiplier: 1,
+        class: 'is-reveal'
+    });
 
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
