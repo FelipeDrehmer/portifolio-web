@@ -161,6 +161,7 @@ nav ul {
   align-items: center;
   gap: 2rem;
   position: relative;
+  user-select: none;
 }
 
 .inicio-main-container {
@@ -494,6 +495,7 @@ nav ul {
   max-width: 250px;
   line-height: 1;
   padding-left: 1.5rem;
+  user-select: none;
 }
 
 .projetos-texto-desc .projetos-texto-desc-title::before {

@@ -8,7 +8,7 @@ const loadPage = () => {
         lerp: 0.1, 
     });
 
-    // ========== ANIMAÇÕES DE ENTRADA (GSAP) ==========
+    // ANIMAÇÕES DE ENTRADA (GSAP) 
     
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
@@ -39,7 +39,46 @@ const loadPage = () => {
         duration: 0.6 
     }, "-=0.3");
 
-    // ========== FIM DAS ANIMAÇÕES ==========
+    gsap.set(".projetos-title", { opacity: 0, y: 30 });
+
+    scroll.on('scroll', (args) => {
+        const scrollY = args.scroll.y;
+        const windowHeight = window.innerHeight;
+        const triggerPoint = 200;
+        if (scrollY > triggerPoint) {
+            gsap.to(".projetos-title", { 
+                opacity: 1,
+                y: 0,
+                duration: 1.5,
+                ease: "power3.out"
+            });
+        }
+    });
+
+    gsap.set(".projetos-card:nth-child(1)", { opacity: 0, x: -200 });
+    gsap.set(".projetos-card:nth-child(2)", { opacity: 0, x: 200 });
+
+    scroll.on('scroll', (args) => {
+        const scrollY = args.scroll.y;
+        const triggerPoint = 400;
+        
+        if (scrollY > triggerPoint) {
+            gsap.to(".projetos-card:nth-child(1)", {
+                opacity: 1,
+                x: 0,
+                duration: 1.5,
+                ease: "back.out(1.7)"
+            });
+            gsap.to(".projetos-card:nth-child(2)", {
+                opacity: 1,
+                x: 0,
+                duration: 1.5,
+                ease: "back.out(1.7)",
+            });
+        }
+    });
+
+    // FIM DAS ANIMAÇÕES 
 
     // Botão Ver Projetos
     const btnProjetos = document.getElementById('btn-projetos');
@@ -47,7 +86,7 @@ const loadPage = () => {
         btnProjetos.addEventListener('click', () => {
             const projetosSection = document.querySelector('#projetos');
             if (projetosSection) {
-                scroll.scrollTo(projetosSection);
+                scroll.scrollTo(projetosSection, { offset: -55 });
             }
         });
     }
@@ -72,7 +111,7 @@ const loadPage = () => {
         const scrollY = args.scroll.y;
         const windowHeight = window.innerHeight;
 
-        // ========== ESCONDER/MOSTRAR HEADER ==========
+        //  ESCONDER/MOSTRAR HEADER 
         const header = document.querySelector('header');
         const scrollThreshold = 100; // Só começa a esconder após 100px
         
@@ -85,7 +124,7 @@ const loadPage = () => {
         }
         lastScrollY = scrollY;
 
-        // ========== NAVEGACAO ATIVA ==========
+        //  NAVEGACAO ATIVA 
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
@@ -112,7 +151,7 @@ const loadPage = () => {
         scroll.update();
     });
 
-    // ========== MODAL ==========
+    //  MODAL 
     const modalButtons = document.querySelectorAll('[data-modal]');
     const modals = document.querySelectorAll('.modal-overlay');
     const modalCloseButtons = document.querySelectorAll('.modal-close');
