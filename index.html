@@ -98,20 +98,15 @@
         <div class="sobre-mim-content">
           <div class="sobre-mim-left">
             <p class="sobre-mim-description">
-              Tenho 19 anos, sou estudante do 2o ano de Engenharia de Software na Faculdade Donaduzzi e atuo ha 1 ano na area de desenvolvimento como Dev Trainee. Faco parte de uma equipe responsavel por melhorias em um ERP empresarial, contribuindo com solucoes voltadas a otimizacao de processos e a evolucao do sistema.
+              Me chamo Felipe Karling Drehmer, tenho 19 anos e sou estudante de Engenharia de Software na Faculdade Donaduzzi. Sou uma pessoa criativa, curiosa e com muita vontade de aprender características que carrego tanto na vida pessoal quanto em tudo que me proponho a fazer.
+              <br><br>
+              Acredito que boas ideias nascem da combinação entre criatividade e dedicação. Me interesso por tecnologia, música, séries e jogos áreas que, de formas diferentes, me ensinaram a pensar fora da caixa e a enxergar soluções onde outros veem obstáculos.
             </p>
 
-            <details class="sobre-mim-carreira" open>
-              <summary>
-                <span>Carreira</span>
-                <i class='bx bx-chevron-down'></i>
-              </summary>
-              <ul>
-                <li>Dev Trainee focado em manutencao e evolucao de ERP.</li>
-                <li>Criacao de modulos internos e melhorias de usabilidade.</li>
-                <li>Integracao entre aplicacao, banco de dados e rotinas do sistema.</li>
-              </ul>
-            </details>
+            <div class="sobre-mim-carreira-trigger">
+              <span class="sobre-mim-carreira-label">Carreira</span>
+              <button class="sobre-mim-carreira-info-btn" data-modal="modal-carreira" aria-label="Abrir detalhes de carreira">i</button>
+            </div>
           </div>
 
           <div class="sobre-mim-right">
@@ -155,6 +150,25 @@
       </div>
     </section>
   </main>
+
+  <div class="modal-overlay" id="modal-carreira">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <div class="modal-header">
+        <h2><span class="grey-text">&lt;</span>Carreira<span class="grey-text">&gt;</span></h2>
+        <span class="modal-tag">✦ Info</span>
+      </div>
+      <div class="modal-body">
+        <p>Resumo da minha atuacao profissional e tecnica na area de desenvolvimento.</p>
+        <h3>Experiencia:</h3>
+        <ul>
+          <li>Dev Trainee focado em manutencao e evolucao de ERP.</li>
+          <li>Criacao de modulos internos e melhorias de usabilidade.</li>
+          <li>Integracao entre aplicacao, banco de dados e rotinas do sistema.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
   <div class="modal-overlay" id="modal-chat-erp">
     <div class="modal-content">

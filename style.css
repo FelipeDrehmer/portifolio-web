@@ -276,6 +276,10 @@ nav ul {
   grid-template-columns: 1fr 360px;
   gap: 2.2rem;
   align-items: start;
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+  justify-content: center;
 }
 
 .sobre-mim-left {
@@ -304,61 +308,51 @@ nav ul {
   border-radius: 4px;
 }
 
-.sobre-mim-carreira {
-  background: var(--color-bgCard2);
-  border-radius: 10px;
-  color: var(--color-text1);
-  max-width: 760px;
-  overflow: hidden;
-}
-
-.sobre-mim-carreira summary {
-  list-style: none;
+.sobre-mim-carreira-trigger {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.7rem 0.9rem 0.7rem 1.5rem;
-  font-size: 2rem;
-  font-weight: 600;
-  cursor: pointer;
+  background: var(--color-bgPrimary);
+  border-radius: 16px;
+  max-width: 760px;
+  border: 1px solid var(--color-bgCard1);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+  padding: 1rem 1.2rem 1rem 1.4rem;
 }
 
-.sobre-mim-carreira summary::-webkit-details-marker {
-  display: none;
-}
-
-.sobre-mim-carreira summary i {
-  background: #e9ecff;
-  color: #4465ff;
-  border-radius: 999px;
-  padding: 0.15rem 0.7rem;
+.sobre-mim-carreira-label {
+  color: var(--color-text2);
   font-size: 1.4rem;
-  transition: transform 0.25s ease;
+  font-weight: 600;
 }
 
-.sobre-mim-carreira[open] summary i {
-  transform: rotate(180deg);
+.sobre-mim-carreira-info-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  background: var(--color-bgCard2);
+  color: var(--color-text1);
+  font-weight: 700;
+  font-size: 1.2rem;
+  display: grid;
+  place-items: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.sobre-mim-carreira ul {
-  padding: 0 1.5rem 1.2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
+.sobre-mim-carreira-info-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(68, 101, 255, 0.35);
 }
 
-.sobre-mim-carreira li {
-  list-style: disc;
-  margin-left: 1rem;
-  line-height: 1.5;
-  font-size: 1rem;
+.sobre-mim-carreira-info-btn:active {
+  transform: translateY(-1px);
 }
 
 .sobre-mim-right {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  margin-top: -9rem;
+  gap: 0.2rem;
+  margin-top: -7rem;
 }
 
 .sobre-mim-tech-card {
@@ -379,7 +373,7 @@ nav ul {
   position: relative;
   width: 300px;
   height: 300px;
-  margin: 0 auto 0.7rem;
+  margin: 1.8rem auto 2rem;
   overflow: visible;
   isolation: isolate;
 }
@@ -900,8 +894,8 @@ nav ul {
     font-size: 1.5rem;
   }
 
-  .sobre-mim-carreira summary {
-    font-size: 1.6rem;
+  .sobre-mim-carreira-label {
+    font-size: 1.25rem;
   }
 
   .sobre-mim-tech-header h2 {
@@ -1072,6 +1066,8 @@ nav ul {
   .sobre-mim-content {
     grid-template-columns: 1fr;
     gap: 1rem;
+    max-width: 620px;
+    margin: 0 auto;
   }
 
   .sobre-mim-description {
@@ -1079,13 +1075,18 @@ nav ul {
     max-width: 100%;
   }
 
-  .sobre-mim-carreira {
+  .sobre-mim-carreira-trigger {
     max-width: 100%;
+    padding: 0.85rem 1rem;
   }
 
-  .sobre-mim-carreira summary {
+  .sobre-mim-carreira-label {
     font-size: 1.2rem;
-    padding-left: 1rem;
+  }
+
+  .sobre-mim-carreira-info-btn {
+    width: 38px;
+    height: 38px;
   }
 
   .sobre-mim-right {
